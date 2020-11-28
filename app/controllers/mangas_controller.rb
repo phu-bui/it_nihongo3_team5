@@ -1,5 +1,7 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   # GET /mangas
   # GET /mangas.json

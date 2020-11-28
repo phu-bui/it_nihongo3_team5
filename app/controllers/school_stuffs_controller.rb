@@ -1,5 +1,6 @@
 class SchoolStuffsController < ApplicationController
   before_action :set_school_stuff, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /school_stuffs
   # GET /school_stuffs.json
