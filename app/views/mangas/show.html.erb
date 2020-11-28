@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @manga.title %>
+</p>
+
+<p>
+  <strong>Number of pages:</strong>
+  <%= @manga.number_of_pages %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @manga.price %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @manga.author %>
+</p>
+
+<p>
+  <strong>Pulisher:</strong>
+  <%= @manga.pulisher %>
+</p>
+<p>
+
+  <% if @manga.image.attached? %>
+
+    <%= image_tag @manga.image %>
+
+  <% end %>
+
+</p>
+
+<%= link_to 'Edit', edit_manga_path(@manga) %> |
+<%= link_to 'Back', mangas_path %>

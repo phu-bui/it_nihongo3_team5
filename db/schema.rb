@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 2020_11_28_030249) do
     t.string "name"
     t.float "price"
     t.string "publisher"
+  create_table "mangas", force: :cascade do |t|
+    t.string "title"
+    t.integer "number_of_pages"
+    t.float "price"
+    t.string "author"
+    t.string "pulisher"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
