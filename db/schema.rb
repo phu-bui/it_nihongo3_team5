@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_11_28_032032) do
     t.string "name"
     t.float "price"
     t.string "publisher"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
