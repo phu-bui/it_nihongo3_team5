@@ -1,5 +1,46 @@
-<h1>ホームページ</h1>
-<%= link_to "漫画一覧をみる", mangas_path %>  
-<%= link_to "本一覧をみる", books_path %>  
-<%= link_to "学校のもの一覧をみる", school_stuffs_path %>  
-
+     
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Book Store!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Services</h2>
+                    
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3"><%= link_to "Comics for children", mangas_path %></h4>
+                        <p class="text-muted">Comic books are a medium used to express ideas visually, often in combination with text or other visual information.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3"><%= link_to "Books", books_path %></h4>
+                        <p class="text-muted">The work "The stranger in the mirror" Sidney Sheldon portrays Hollywood vividly and practically, behind the brilliant aura is so many trade-offs, pain ...</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3"><%= link_to "School supplies", school_stuffs_path %></h4>
+                        <p class="text-muted">Stationery is simple items serving office activities such as printing paper, notebook, writing paper, pens (pencil, ball), pins, clips, cellophane, plastic bag, plastic bag, tape , glue, envelope, cardboard bag, briefcase book, ...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        
