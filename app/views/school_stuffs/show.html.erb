@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school_stuff.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @school_stuff.price %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @school_stuff.publisher %>
+</p>
+
+<p>
+  <% if @school_stuff.image.attached? %>
+    <%= image_tag @school_stuff.image %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_school_stuff_path(@school_stuff) %> |
+<%= link_to 'Back', school_stuffs_path %>
