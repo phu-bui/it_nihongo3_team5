@@ -1,138 +1,100 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @manga.title %>
-</p>
-
-<p>
-  <strong>Number of pages:</strong>
-  <%= @manga.number_of_pages %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @manga.price %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @manga.author %>
-</p>
-
-<p>
-  <strong>Pulisher:</strong>
-  <%= @manga.pulisher %>
-</p>
-<p>
-
-  <% if @manga.image.attached? %>
-
-    <%= image_tag @manga.image %>
-
-  <% end %>
-
-</p>
-<h2>Review From</h2>
-<%= form_with(model: @manga_review, local: true) do |form| %>
-  <div class= "field">
-    <%= form.text_area :review %>
-    <%= form.hidden_field :manga_id, :value => @manga.id %>
-    <%= form.hidden_field :user_id, :value => current_user.id %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-<h2>Review List</h2>
-<ul>
-  <% @manga.manga_review.each do |manga_review|%>
-   <li><%= manga_review.review %>
-     (<i><%= manga_review.user.name if manga_review.user %></i>)</li>
-<% end %>
-</ul>
-<%= link_to 'Edit', edit_manga_path(@manga) %> |
-<%= link_to 'Back', mangas_path %>
-
-
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Title:</strong>
-  <%= @manga.title %>
-</p>
-<p>
-  <strong>Number of pages:</strong>
-  <%= @manga.number_of_pages %>
-</p>
-<p>
-  <strong>Detail:</strong>
-  <%= @manga.detail %>
-</p>
-<p>
-  <% if @manga.image.attached? %>
-    <%= image_tag @manga.image %>
-  <% end %>
-</p>
-<h2>Review From</h2>
-<%= form_with(model: @manga_review, local: true) do |form| %>
-  <div class= "field">
-    <%= form.text_area :review %>
-    <%= form.hidden_field :manga_id, :value => @manga.id %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card mb-3">
-        <h3 class="card-header">本詳細</h3>
-        <div class="card-body">
-          <h5 class="card-title"><%= @manga.title %></h5>
-          <h6 class="card-subtitle text-muted">ページ数：<%= @manga.number_of_pages %></h6>
-  　　　　</div>
-  　　　　<% if @manga.image.attached? %>
-          <%= image_tag @manga.image, class: "card-img" %>
-        <% end %>
-        <div class="card-body">
-          <p class="card-text"><%= @manga.detail %></p>
-        </div>
-      </div>
-    </div>
-  <div class="col-sm-4">
-    <div class="card bg-light mb-3" style="max-width: 40rem;">
-      <div class="card-header">レビュー</div>
-      <div class="card-body">
-        <ul>
-          <% @manga.book_review.each do |manga_review|%>
-          　<div class="card border-light mb-3" style="max-width: 20rem;">
-              <div class="card-header"><%= manga_review.user.name %></div>
-              <div class="card-body">
-                <p class="card-text"><%= manga_review.review %></p>
-              </div>
+ <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">
+                                  <p>
+                                    <strong>Title:</strong>
+                                    <%= @manga.title %>
+                                  </p>
+                                </div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Explore</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Finish</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/04-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lines</div>
+                                <div class="portfolio-caption-subheading text-muted">Branding</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/05-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Southwest</div>
+                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/06-thumbnail.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Window</div>
+                                <div class="portfolio-caption-subheading text-muted">Photography</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <% end %>
-        </ul>
-      <%= form_with(model: @manga_review, local: true) do |form| %>
-        <div class= "field">
-          <%= form.text_area :review, :class => "form-control" %>
-          <%= form.hidden_field :manga_id, :value => @manga.id %>
-        </div>
-        <div class="actions">
-          <%= form.submit %>
-        </div>
-       <% end %>
-       </div>
-    </div>
-  </div>
-<% end %>
-<h2>Review List</h2>
-<ul>
-  <% @manga.manga_review.each do |manga_review|%>
-   <li><%= manga_review.review %>
-     (<i><%= manga_review.user.name if manga_review.user%></i>)</li>
-<% end %>
-</ul>
-</div>
-
-<%= link_to 'Edit', edit_manga_path(@manga) %> |
-<%= link_to 'Back', mangas_path %>
+        </section>
