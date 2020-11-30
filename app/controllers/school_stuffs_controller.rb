@@ -11,6 +11,7 @@ class SchoolStuffsController < ApplicationController
   # GET /school_stuffs/1
   # GET /school_stuffs/1.json
   def show
+     @school_review = SchoolReview.new
   end
 
   # GET /school_stuffs/new

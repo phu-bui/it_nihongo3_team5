@@ -38,6 +38,7 @@
   <div class= "field">
     <%= form.text_area :review %>
     <%= form.hidden_field :manga_id, :value => @manga.id %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="actions">
     <%= form.submit %>
