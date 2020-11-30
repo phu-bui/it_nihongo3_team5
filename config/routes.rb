@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :school_reviews
+  resources :manga_reviews
   resources :book_reviews
   resources :school_stuffs
   resources :books

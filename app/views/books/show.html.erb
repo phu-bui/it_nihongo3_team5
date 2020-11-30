@@ -29,6 +29,7 @@
   <div class= "field">
     <%= form.text_area :review %>
     <%= form.hidden_field :book_id, :value => @book.id %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="actions">
     <%= form.submit %>
