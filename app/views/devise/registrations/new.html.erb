@@ -1,54 +1,54 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
-    <h3 class="mt-1 mb-3">アカウントを作成</h3>
+    <h3 class="mt-1 mb-3">Create An Accout</h3>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="form-group">
-      <%= f.label :name, "名前", :class => "form-label" %>
+      <%= f.label :name, "Name", :class => "form-label" %>
       <%= f.text_field :name, :class => "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :age, "年齢", :class => "form-label" %>
+      <%= f.label :age, "Age", :class => "form-label" %>
       <%= f.number_field :age, :class => "form-control" %>
     </div>
     
     <div class="form-group">
-      <%= f.label :address, "アドレス", :class => "form-label" %>
+      <%= f.label :address, "Address", :class => "form-label" %>
       <%= f.text_field :address, :class => "form-control" %>
     </div>
     
     <div class="form-group">
-      <%= f.label :phone, "電話番号", :class => "form-label" %>
+      <%= f.label :phone, "Phone Number", :class => "form-label" %>
       <%= f.text_field :phone, :class => "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :avatar, "写真",:class => "form-label" %>
+      <%= f.label :avatar, "Avatar",:class => "form-label" %>
       <%= f.file_field :avatar %>
     </div>
 
     <div class="form-group">
-      <%= f.label :email, "メールアドレス", :class => "form-label" %>
+      <%= f.label :email, "E-mail", :class => "form-label" %>
       <%= f.email_field :email, autocomplete: "email", :class => "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :password, "パスワード (%s文字以上)"%@minimum_password_length, :class => "form-label" %>
+      <%= f.label :password, "Password (%s characters or more)"%@minimum_password_length, :class => "form-label" %>
       <%= f.password_field :password, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :password_confirmation, "もう一度パスワードを入力してください", :class => "form-label" %>
+      <%= f.label :password_confirmation, "Retyping your password", :class => "form-label" %>
       <%= f.password_field :password_confirmation, :class => "form-control" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "アカウントを作成する", :class => "btn btn-primary btn-block" %>
+      <%= f.submit "Create Accout", :class => "btn btn-primary btn-block" %>
     </div>
     <% end %>
     <div class="mt-2">
-      すでにアカウントをお持ちですか？<%= link_to "ログイン", new_user_session_path %>
+      Do you already have an account？<%= link_to "Login", new_user_session_path %>
     </div>
   </div>
 </div>

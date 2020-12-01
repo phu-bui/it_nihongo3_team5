@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :school_stuffs
   resources :books
   resources :mangas
-
   get 'users/show'
   root 'static_pages#home'
   get 'static_pages/home'
