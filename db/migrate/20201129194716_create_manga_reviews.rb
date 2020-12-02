@@ -4,6 +4,7 @@ class CreateMangaReviews < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :manga_id
       t.text :review
+      t.text :detail
 
       t.timestamps
     end
