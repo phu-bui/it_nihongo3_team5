@@ -10,33 +10,60 @@
       </ul>
     </div>
   <% end %>
+          <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Book</h2>
+                    <h3 class="section-subheading text-muted">More information of the book</h3>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label style="color:white">Title</label>
+                                <%= form.label :title %><br>
+                                <%= form.text_field :title %>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Number of page</label>
+                                <%= form.label :number_of_pages %><br>
+                                <%= form.number_field :number_of_pages %>                           
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Pulisher</label>
+                                <%= form.label :pulisher %>
+                                <%= form.text_field :pulisher %>
+                            </div>
+                            <div class="form-group">
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <label style="color:white">Price</label>
+                                <%= form.label :price %><br>
+                                <%= form.text_field :price %>
+                                <p class="help-block text-danger"></p>                              
+                            </div>
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <label style="color:white">Author</label>
+                                <%= form.label :author %><br>
+                                <%= form.text_field :author %>
+                                <p class="help-block text-danger"></p>                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                            <%= form.submit %>
 
-  <div class="field">
-    <%= form.label :number_of_pages %>
-    <%= form.number_field :number_of_pages %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pulisher %>
-    <%= form.text_field :pulisher %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+  
+  
 <% end %>
+

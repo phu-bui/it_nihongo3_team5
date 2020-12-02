@@ -1,37 +1,54 @@
-<%= form_with(model: school_stuff, local: true) do |form| %>
-  <% if school_stuff.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(school_stuff.errors.count, "error") %> prohibited this school_stuff from being saved:</h2>
+<!--<%= form_with(model: school_stuff, local: true) do |form| %>-->
+<!--  <% if school_stuff.errors.any? %>-->
+<!--    <div id="error_explanation">-->
+<!--      <h2><%= pluralize(school_stuff.errors.count, "error") %> prohibited this school_stuff from being saved:</h2>-->
 
-      <ul>
-        <% school_stuff.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<!--      <ul>-->
+<!--        <% school_stuff.errors.full_messages.each do |message| %>-->
+<!--          <li><%= message %></li>-->
+<!--        <% end %>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  <% end %>-->
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %><br>
-  </div>
-  
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
+          <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">School Stuff</h2>
+                    <h3 class="section-subheading text-muted">More information</h3>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label style="color:white">Name</label>
+                                <%= form.label :name %><br>
+                                <%= form.text_field :name %>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Pulisher</label>
+                                <%= form.label :pulisher %><br>
+                                <%= form.text_field :pulisher %>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <label style="color:white">Price</label>
+                                <%= form.label :price %><br>
+                                <%= form.text_field :price %>
+                                <p class="help-block text-danger"></p>                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                            <%= form.submit %>
 
-  <div class="field">
-    <%= form.label :publisher %>
-    <%= form.text_field :publisher %>
-  </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+<!--<% end %>-->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+
