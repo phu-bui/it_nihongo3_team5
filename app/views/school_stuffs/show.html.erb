@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
+<h1 style="color: Blue; padding-left: 5px "> School Stuff Review</h1>
+<div class="" style="margin-left: 5%">
+    <table class="" >
+       <tbody>
+        
+          <tr>
+            <td><strong>Name:</strong></td>
+            <td style="padding-left: 15px"><%= @school_stuff.name %></td>
+          </tr>
+          <tr>
+            <td><strong>Price:</strong></td>
+            <td style="padding-left: 15px"><%= @school_stuff.price %></td>
+          </tr>
+          
+          <tr>
+            <td><strong>Pulisher:</strong></td>
+            <td style="padding-left: 15px"><%= @school_stuff.publisher  %></td>
+          </tr>
+       </tbody>
+    </table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @school_stuff.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @school_stuff.price %>
-</p>
-
-<p>
-  <strong>Publisher:</strong>
-  <%= @school_stuff.publisher %>
-</p>
-
-<p>
+ <p><strong>Image:</trong></br>
+   </hr>
   <% if @school_stuff.image.attached? %>
     <%= image_tag @school_stuff.image %>
   <% end %>
 </p>
-<h2>Review From</h2>
+<h2 style="color: Blue">Review From</h2>
 <%= form_with(model: @school_review, local: true) do |form| %>
   <div class= "field">
     <%= form.text_area :review %>
@@ -31,12 +37,28 @@
     <%= form.submit %>
   </div>
 <% end %>
-<h2>Review List</h2>
+<h2 style="color: Blue">Review List</h2>
 <ul>
-  <% @school_stuff.school_review.each do |school_review|%>
-   <li><%= school_review.review %>
-     (<i><%= school_review.user.name if school_review.user %></i>)</li>
+  
+  <% @school_stuff.school_review.each do |school_review|%></br>
+  <li  class="review">
+    <b> <%= school_review.user.name if school_review.user %></b>:<%= school_review.review %></br>
+    </li>
 <% end %>
 </ul>
 <%= link_to 'Edit', edit_school_stuff_path(@school_stuff) %> |
 <%= link_to 'Back', school_stuffs_path %>
+</div>
+<style>
+
+    .review{
+        border: 1px solid #000;
+        padding-left:5px;
+        list-style : none;
+        border-radius: 10px;
+        padding-top: 4px;
+        padding-botton: 4px;
+        width: 600px;
+        background:Lavender;
+    }
+</style>
